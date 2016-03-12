@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chart-demo</title>
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <!--Custom Styles-->
+        <link rel="stylesheet" href="../css/animate.css">
+        <link rel="stylesheet" href="../css/style.css">
+        
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+
+        <script src="../js/highcharts.js"></script>
+</head>
+<body>
+        <!-- Navbar-->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="navbar-container">
+                    <!-- Navbar Barnd-->
+                    <div class="navbar-header pull-left">
+                        <a href="#" class="navbar-brand">
+                            <small>
+                                <img src="../image/logo.png" />
+                            </small>
+                        </a>
+                    </div>
+                    <!-- /Navbar Barnd-->
+                    <!-- Sidebar Collapse-->
+                    <div class="sidebar-collapse" id="sidebar-collapse">
+                        <span class="collapse-icon glyphicon glyphicon-align-justify"></span>
+                    </div>
+                    <!-- /Sidebar Collapse-->
+                    <!-- Acount Area and Settings-->
+                    <div class="navbar-header pull-right">
+                        <div class="account-area">
+                            <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                <div class="avatar">
+                                    <span class="avatar-icon glyphicon glyphicon-user"></span>
+                                </div>
+                                <section>
+                                    <h2>
+                                        <span class="profile">张三</span>
+                                    </h2>
+                                </section>
+                            </a>
+                            <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                <li class="edit"><a href="#">设置</a></li>
+                                <li class="dropdown-footer">
+                                    <a href="#">
+                                        退出
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /Acount Area and Settings-->
+                </div>
+            </div>
+        </div>
+        <!-- /Navbar-->
+        <!-- Main Container-->
+        <div class="main-container container-fluid">
+            <!-- Page Container-->
+            <div class="page-container">
+                <!-- Page Sidebar-->
+                <div class="page-sidebar" id="sidebar">
+                    <!-- Page Sidebar Header-->
+                    <div class="sidebar-header-wrapper">
+                        <input type="text" class="searchinput">
+                        <i class="searchicon glyphicon glyphicon-search"></i>
+                        <div class="searchhelper">Search Reports, Charts</div> 
+                    </div>
+                    <!-- /Page Sidebar Header-->
+                    <!-- Sidebar Menu-->
+                    <ul class="nav sidebar-menu">
+                        <!--Dashboard-->
+                        <li class="active">
+                            <a href="#">
+                                <i class="menu-icon glyphicon glyphicon-home"></i>
+                                <span class="menu-text"> 图表 </span>
+                            </a>
+                        </li>
+                        <!--Tables-->
+                        <li>
+                            <a href="#" class="menu-dropdown">
+                                <i class="menu-icon glyphicon glyphicon-calendar"></i>
+                                <span class="menu-text"> 图表1 </span>
+
+                                <i class="menu-expand"></i>
+                            </a>
+
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" class="menu-dropdown">
+                                        <span class="menu-text">图表1-1</span>
+                                        <i class="menu-expand"></i>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li>
+                                            <a href="#">
+                                                <span class="menu-text">图表1-1-1</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="menu-text">图表1-1-2</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="menu-text">图表1-2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--Charts-->
+                        <li>
+                            <a href="#" class="menu-dropdown">
+                                <i class="menu-icon glyphicon glyphicon-object-align-bottom"></i>
+                                <span class="menu-text"> 图表2 </span>
+
+                                <i class="menu-expand"></i>
+                            </a>
+
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#">
+                                        <span class="menu-text">图表2-1</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <span class="menu-text">图表2-2</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="menu-text">图表2-3</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="menu-text">图表2-4</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="menu-text">图表2-5</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- /Sidebar Menu-->
+                </div>
+                <!-- /Page Sidebar-->
+                <!-- Page Content-->
+                <div class="page-content">
+                    <!-- Page Breadcrumb-->
+                    <div class="page-breadcrumbs">
+                        <ul class="breadcrumb">
+                            <li>
+                                <i class="glyphicon glyphicon-home"></i>
+                                <a href="#">图表</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">示例</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /Page Breadcrumb-->
+                    <!-- Page Header-->
+                    <div class="page-header position-relative">
+                        <div class="header-title">
+                            <h1>
+                                图表
+                                <small>
+                                    <i class="glyphicon glyphicon-menu-right"></i>
+                                    示例
+                                </small>
+                            </h1>
+                        </div>
+                        <!--Header Buttons-->
+                        <div class="header-buttons">
+                            <a class="sidebar-toggler" href="#">
+                                <i class="glyphicon glyphicon-resize-horizontal"></i>
+                            </a>
+                            <a class="refresh" id="refresh-toggler" href="">
+                                <i class="glyphicon glyphicon-refresh"></i>
+                            </a>
+                            <a class="fullscreen" id="fullscreen-toggler" href="#">
+                                <i class="glyphicon glyphicon-fullscreen"></i>
+                            </a>
+                        </div>
+                        <!--Header Buttons End-->
+                    </div>
+                    <!-- /Page Header-->
+                    <!-- Page Body-->
+                    <div class="page-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12">
+                                <div class="widget">
+                                    <div class="widget-header ">
+                                        <span class="widget-caption">简单数据表</span>
+                                        <div class="widget-buttons">
+                                            <a href="#" data-toggle="maximize">
+                                                <i class="glyphicon glyphicon-resize-full"></i>
+                                            </a>
+                                            <a href="#" data-toggle="collapse">
+                                                <i class="glyphicon glyphicon-minus"></i>
+                                            </a>
+                                            <a href="#" data-toggle="dispose">
+                                                <i class="glyphicon glyphicon-remove"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="widget-body">
+                                        <div role="grid" id="simpledatatable_wrapper" class="dataTables_wrapper form-inline no-footer">
+                                            <table class="table table-striped table-bordered table-hover dataTable no-footer" id="simpledatatable" aria-describedby="simpledatatable_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="" style="width: 51px;">
+                                                            <div class="checker">
+                                                                <span class="">
+                                                                    <input type="checkbox" class="group-checkable" data-set="#flip .checkboxes"></span>
+                                                                </div>
+                                                        </th>
+                                                        <th class="sorting" tabindex="0" aria-controls="simpledatatable" rowspan="1" colspan="1" aria-label="
+                                                            Username
+                                                        : activate to sort column ascending" style="width: 317px;">
+                                                            Username
+                                                        </th>
+                                                        <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="
+                                                            Email
+                                                        " style="width: 600px;">
+                                                            Email
+                                                        </th>
+                                                        <th class="sorting" tabindex="0" aria-controls="simpledatatable" rowspan="1" colspan="1" aria-label="
+                                                            Points
+                                                        : activate to sort column ascending" style="width: 215px;">
+                                                            Points
+                                                        </th>
+                                                        <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="
+                                                            Joined
+                                                        " style="width: 343px;">
+                                                            Joined
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="odd">
+                                                        <td class=" ">
+                                                            <div class="checker"><span class=""><input type="checkbox" class="checkboxes" value="1"></span></div>
+                                                        </td>
+                                                        <td class=" ">
+                                                            shuxer
+                                                        </td>
+                                                        <td class=" ">
+                                                            <a href="mailto:shuxer@gmail.com">shuxer@gmail.com</a>
+                                                        </td>
+                                                        <td class=" ">
+                                                            120
+                                                        </td>
+                                                        <td class="center  ">
+                                                            12 Jan 2012
+                                                        </td>
+                                                    </tr><tr class="even">
+                                                        <td class=" ">
+                                                            <div class="checker"><span class=""><input type="checkbox" class="checkboxes" value="1"></span></div>
+                                                        </td>
+                                                        <td class=" ">
+                                                            looper
+                                                        </td>
+                                                        <td class=" ">
+                                                            <a href="mailto:looper90@gmail.com">looper90@gmail.com</a>
+                                                        </td>
+                                                        <td class=" ">
+                                                            120
+                                                        </td>
+                                                        <td class="center  ">
+                                                            12.12.2011
+                                                        </td>
+                                                    </tr><tr class="odd">
+                                                        <td class=" ">
+                                                            <div class="checker"><span class=""><input type="checkbox" class="checkboxes" value="1"></span></div>
+                                                        </td>
+                                                        <td class=" ">
+                                                            userwow
+                                                        </td>
+                                                        <td class=" ">
+                                                            <a href="#">userwow@yahoo.com</a>
+                                                        </td>
+                                                        <td class=" ">
+                                                            20
+                                                        </td>
+                                                        <td class="center  ">
+                                                            12.12.2012
+                                                        </td>
+                                                    </tr><tr class="even">
+                                                        <td class=" ">
+                                                            <div class="checker"><span class=""><input type="checkbox" class="checkboxes" value="1"></span></div>
+                                                        </td>
+                                                        <td class=" ">
+                                                            user1wow
+                                                        </td>
+                                                        <td class=" ">
+                                                            <a href="mailto:userwow@gmail.com">userwow@gmail.com</a>
+                                                        </td>
+                                                        <td class=" ">
+                                                            20
+                                                        </td>
+                                                        <td class="center  ">
+                                                            12.12.2012
+                                                        </td>
+                                                    </tr><tr class="odd gradeX">
+                                                        <td class=" ">
+                                                            <div class="checker"><span class=""><input type="checkbox" class="checkboxes" value="1"></span></div>
+                                                        </td>
+                                                        <td class=" ">
+                                                            restest
+                                                        </td>
+                                                        <td class=" ">
+                                                            <a href="mailto:userwow@gmail.com">test@gmail.com</a>
+                                                        </td>
+                                                        <td class=" ">
+                                                            20
+                                                        </td>
+                                                        <td class="center  ">
+                                                            12.12.2012
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="row DTTTFooter">
+                                                <div class="col-sm-6">
+                                                    <div class="dataTables_info" id="simpledatatable_info" role="alert" aria-live="polite" aria-relevant="all">Showing 1 to 5 of 25 entries</div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="dataTables_paginate paging_bootstrap" id="simpledatatable_paginate">
+                                                        <ul class="pagination">
+                                                            <li class="prev disabled">
+                                                                <a href="#">Prev</a>
+                                                            </li>
+                                                            <li class="active">
+                                                                <a href="#">1</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">2</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">3</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">4</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">5</a>
+                                                            </li>
+                                                            <li class="next">
+                                                                <a href="#">Next</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="dashboard-box">
+                                    <!-- <div class="box-header">
+                                        <div class="deadline">
+                                            charts
+                                        </div> 
+                                    </div> -->
+                                    <div class="tabtable">
+                                        <ul class="nav nav-tabs tabs-flat  nav-justified" id="myTab11">
+                                            <li class="active">
+                                                <a data-toggle="tab" href="#container_1">
+                                                    曲线图
+                                                </a>
+                                            </li>
+                                            <li class="">
+                                                <a data-toggle="tab" href="#container_2">
+                                                    柱状图
+                                                </a>
+                                            </li>
+                                            <li class="">
+                                                <a data-toggle="tab" href="#container_3">
+                                                    饼图
+                                                </a>
+                                            </li>
+                                            <li class="">
+                                                <a data-toggle="tab" href="#container_4">
+                                                    混合图
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content tabs-flat no-padding">
+                                            <div id="container_1" class="tab-pane animated fadeInUp active"></div>
+                                            <div id="container_2" class="tab-pane animated fadeInUp"></div>
+                                            <div id="container_3" class="tab-pane animated fadeInUp"></div>
+                                            <div id="container_4" class="tab-pane animated fadeInUp"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- /Page Body-->
+                </div>
+                <!-- /Page Content-->
+            </div>
+            <!-- /Page Container-->
+        </div>
+        <!-- /Main Container-->    
+    </body>
+    <script>
+        (function($){
+            $(".sidebar-menu .menu-dropdown").click(function(){
+                if($("#sidebar").hasClass("menu-compact")){
+                    return false;
+                }
+                if($(this).parent().hasClass("open")){
+                    $(this).parent().removeClass("open");
+                }else{
+                    $(this).parent().addClass("open");
+                }
+            })
+            $("#sidebar-collapse").click(function(){
+                if($(this).hasClass("active")){
+                    $(this).removeClass("active");
+                    $("#sidebar").removeClass("menu-compact");
+                }else{
+                    $(this).addClass("active");
+                    $("#sidebar").addClass("menu-compact");
+                    $("#sidebar").removeClass("hide");
+                }
+                resetChart();
+            })
+            $(".sidebar-toggler").click(function(){
+                if($(this).hasClass("active")){
+                    $(this).removeClass("active");
+                    $("#sidebar").removeClass("hide");
+                }else{
+                    $(this).addClass("active");
+                    $("#sidebar").addClass("hide");
+                }
+                resetChart();
+            })
+            $(".widget-buttons [data-toggle='maximize']").click(function(){
+                if($(this).find(".glyphicon").hasClass("glyphicon-resize-full")){
+                    //大屏展示
+                    $(this).parents(".widget").addClass("maximized");
+                    $(this).find(".glyphicon-resize-full").removeClass("glyphicon-resize-full").addClass("glyphicon-resize-small");
+                    $(this).parent().parent().siblings(".widget-body").css("height",$(window).height());
+                }else{
+                    //小窗展示
+                    $(this).parents(".widget").removeClass("maximized");
+                    $(this).find(".glyphicon-resize-small").removeClass("glyphicon-resize-small").addClass("glyphicon-resize-full");
+                    $(this).parent().parent().siblings(".widget-body").css("height","auto");
+                }
+            })
+            $(".widget-buttons [data-toggle='collapse']").click(function(){
+                if($(this).find(".glyphicon").hasClass("glyphicon-minus")){
+                    //大屏展示
+                    $(this).parents(".widget").addClass("collapsed");
+                    $(this).find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+                    $(this).parent().parent().siblings(".widget-body").hide();
+                }else{
+                    //小窗展示
+                    $(this).parents(".widget").removeClass("collapsed");
+                    $(this).find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+                    $(this).parent().parent().siblings(".widget-body").show();
+                }
+            })
+            $(".widget-buttons [data-toggle='dispose']").click(function(){
+                $(this).parent().parent().parent().remove()
+            })
+            //全屏
+            $("#fullscreen-toggler").click(function(){
+                if($(this).hasClass("active")){
+                    //取消全屏
+                    $(this).removeClass("active");
+                    if (document.exitFullscreen) { 
+                        document.exitFullscreen(); 
+                    } 
+                    else if (document.mozCancelFullScreen) { 
+                        document.mozCancelFullScreen(); 
+                    } 
+                    else if (document.webkitCancelFullScreen) { 
+                        document.webkitCancelFullScreen(); 
+                    } 
+                    else if (document.msExitFullscreen) { 
+                        document.msExitFullscreen(); 
+                    } 
+                }else{
+                    //全屏
+                    $(this).addClass("active");
+                    var docElm = document.documentElement; 
+                    //W3C 
+                    if (docElm.requestFullscreen) { 
+                        docElm.requestFullscreen(); 
+                    } 
+                    //FireFox 
+                    else if (docElm.mozRequestFullScreen) { 
+                        docElm.mozRequestFullScreen(); 
+                    } 
+                    //Chrome等 
+                    else if (docElm.webkitRequestFullScreen) { 
+                        docElm.webkitRequestFullScreen(); 
+                    } 
+                    //IE11 
+                    else if (elem.msRequestFullscreen) { 
+                        elem.msRequestFullscreen(); 
+                    } 
+                }
+            })
+            //tab切换时重新计算chart宽度
+            $("#myTab11 a").click(function(){
+                var container = $(this).attr("href");
+                var width = $(container).parent().width()
+                    height = $(container).parent().height()
+                $(container).highcharts().setSize(width,height)
+            })
+            function resetChart(){
+                var chart=$(".tabtable .tab-content div.active");
+                chart.highcharts().setSize(chart.parent().width(),chart.parent().height());
+            }
+            
+            $('#container_1').highcharts({
+                title: {
+                 text: 'Monthly Average Temperature',
+                    x: -20 //center
+                 },
+                subtitle: {
+                    text: 'Source: WorldClimate.com',
+                    x: -20
+                },
+                xAxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Temperature (°C)'
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                },
+                tooltip: {
+                    valueSuffix: '°C'
+                },
+                legend: {
+                    //layout: 'vertical',
+                    //align: 'right',
+                    //verticalAlign: 'middle',
+                    borderWidth: 0
+                },
+                series: [{
+                    name: 'Tokyo',
+                    data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+                }, {
+                    name: 'New York',
+                    data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+                }, {
+                    name: 'Berlin',
+                    data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+                }, {
+                    name: 'London',
+                    data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+                }]
+            });
+            $('#container_2').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Monthly Average Rainfall'
+                },
+                subtitle: {
+                    text: 'Source: WorldClimate.com'
+                },
+                xAxis: {
+                    categories: [
+                        'Jan',
+                        'Feb',
+                        'Mar',
+                        'Apr',
+                        'May',
+                        'Jun',
+                        'Jul',
+                        'Aug',
+                        'Sep',
+                        'Oct',
+                        'Nov',
+                        'Dec'
+                    ],
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Rainfall (mm)'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Tokyo',
+                    data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+
+                }, {
+                    name: 'New York',
+                    data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+
+                }, {
+                    name: 'London',
+                    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+
+                }, {
+                    name: 'Berlin',
+                    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+
+                }]
+            });
+            $('#container_3').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Browser market shares January, 2015 to May, 2015'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    name: "Brands",
+                    colorByPoint: true,
+                    data: [{
+                        name: "Microsoft Internet Explorer",
+                        y: 56.33
+                    }, {
+                        name: "Chrome",
+                        y: 24.03,
+                        sliced: true,
+                        selected: true
+                    }, {
+                        name: "Firefox",
+                        y: 10.38
+                    }, {
+                        name: "Safari",
+                        y: 4.77
+                    }, {
+                        name: "Opera",
+                        y: 0.91
+                    }, {
+                        name: "Proprietary or Undetectable",
+                        y: 0.2
+                    }]
+                }]
+            });
+            $('#container_4').highcharts({
+                title: {
+                    text: 'Combination chart'
+                },
+                xAxis: {
+                    categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+                },
+                labels: {
+                    items: [{
+                        html: 'Total fruit consumption',
+                        style: {
+                            left: '50px',
+                            top: '18px',
+                            color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                        }
+                    }]
+                },
+                series: [{
+                    type: 'column',
+                    name: 'Jane',
+                    data: [3, 2, 1, 3, 4]
+                }, {
+                    type: 'column',
+                    name: 'John',
+                    data: [2, 3, 5, 7, 6]
+                }, {
+                    type: 'column',
+                    name: 'Joe',
+                    data: [4, 3, 3, 9, 0]
+                }, {
+                    type: 'spline',
+                    name: 'Average',
+                    data: [3, 2.67, 3, 6.33, 3.33],
+                    marker: {
+                        lineWidth: 2,
+                        lineColor: Highcharts.getOptions().colors[3],
+                        fillColor: 'white'
+                    }
+                }, {
+                    type: 'pie',
+                    name: 'Total consumption',
+                    data: [{
+                        name: 'Jane',
+                        y: 13,
+                        color: Highcharts.getOptions().colors[0] // Jane's color
+                    }, {
+                        name: 'John',
+                        y: 23,
+                        color: Highcharts.getOptions().colors[1] // John's color
+                    }, {
+                        name: 'Joe',
+                        y: 19,
+                        color: Highcharts.getOptions().colors[2] // Joe's color
+                    }],
+                    center: [100, 80],
+                    size: 100,
+                    showInLegend: false,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }]
+            });
+        })(jQuery)
+    </script>
+</html>
+</body>
+</html>
